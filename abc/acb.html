@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexcent Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fbf6f6;
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;
+      height: 100vh
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background-color: #333;
+      color: white;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links div {
+      cursor: pointer;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* Main container */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .container img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .heading {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .explanation {
+      font-size: 16px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    /* Section styling */
+    .section {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .section-text {
+      font-size: 16px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    /* Client logos container */
+    .container-two {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .super img {
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .super img:hover {
+      transform: scale(1.05);
+    }
+    .features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px 20px;
+  text-align: center;
+}
+
+.feature-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.feature-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.card {
+      display: flex;
+      align-items: center;
+      
+      gap: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      margin-left: 295px;
+      max-width: 880px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card-content h3 {
+      margin: 0;
+    }
+
+    .card-content p {
+      margin: 10px 0;
+    }
+
+    .card-content button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card-content button:hover {
+      background-color: #0056b3;
+    }
+    .content-wrapper {
+      max-width: 880px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .details-section {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .text-box {
+      margin-bottom: 30px;
+    }
+
+    .logo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: flex-start;
+    }
+
+    .logo-gallery div img {
+      width: 80px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-gallery div img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .details-section {
+        text-align: center;
+      }
+
+      .logo-gallery {
+        justify-content: center;
+      }
+    }
+    .text-container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-left: 295px;
+      max-width: 880px;
+      
+    }
+
+    .text-container h3 {
+      font-size: 24px;
+      color: #333333;
+      margin-bottom: 15px;
+    }
+
+    .text-container p {
+      font-size: 16px;
+      color: #666666;
+      line-height: 1.6;
+    }
+    .image-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 5px;
+      height: 50px;
+    }
+
+    .image-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 200px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .image-card p {
+      padding: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+   
+    
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo-container">
+      <img src="images.jpeg" alt="Logo" />
+      <div class="logo">Nexcent</div>
+    </div>
+    <div class="nav-links">
+      <div>Home</div>
+      <div>Features</div>
+      <div>Community</div>
+      <div>Blog</div>
+      <div>Pricing</div>
+    </div>
+    <button class="btn">Register Now</button>
+  </div>
+
+  <!-- Main content -->
+  <div class="container">
+    <img src="images (1).jpeg" alt="Lessons and insights" />
+    <p class="heading">Lessons and insights from 8 years</p>
+    <p class="explanation">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis.
+    </p>
+  </div>
+
+  <!-- Clients Section -->
+  <div class="section">
+    <h3 class="section-title">Our Clients</h3>
+    <p class="section-text">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam.
+    </p>
+  </div>
+
+  <!-- Client Logos -->
+  <div class="container-two">
+    <div class="super"><img src="images (2).jpeg" alt="Client 1"></div>
+    <div class="super"><img src="images (3).jpeg" alt="Client 2"></div>
+    <div class="super"><img src="images (4).jpeg" alt="Client 3"></div>
+    <div class="super"><img src="images (5).jpeg" alt="Client 4"></div>
+    <div class="super"><img src="images (6).jpeg" alt="Client 5"></div>
+    <div class="super"><img src="images (7).jpeg" alt="Client 6"></div>
+    <div class="super"><img src="images (8).jpeg" alt="Client 7"></div>
+  </div>
+  <div class="section">
+    <h3 class="section-title">Lorem, ipsum dolor sit amet consectetur adipisicing.</h3>
+    <p class="section-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel!</p>
+ </div>
+ <div class="features">
+  <div class="feature-box">
+    <img src="images (2).jpeg" alt="">
+    <h3>Lorem, ipsum.</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit!</p>
+  </div>
+  <div class="feature-box">
+    <img src="images (3).jpeg" alt="">
+    <h3>Lorem, ipsum.</h3>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius.</p>
+  </div>
+  <div class="feature-box">
+    <img src="images (4).jpeg" alt="">
+    <h3>Lorem, ipsum.</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus!</p>
+  </div>
+</div>
+<div class="card">
+  <div><img src="download.png" alt="Descriptive image text"></div>
+  <div class="card-content">
+    <h3>Lorem ipsum dolor sit amet.</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corrupti beatae hic odio quisquam accusamus veritatis repudiandae ipsam sint laborum.</p>
+    <button>Learn More</button>
+  </div>
+</div>
+<br>
+<div class="card">
+  <div><img src="download.png" alt="Descriptive image text"></div>
+  <div class="card-content">
+    <h3>Lorem ipsum dolor sit amet.</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente corrupti beatae hic odio quisquam accusamus veritatis repudiandae ipsam sint laborum.</p>
+    <button>Learn More</button>
+  </div>
+</div>
+<div class="content-wrapper">
+  <!-- Left Image Section -->
+  <div class="image-section">
+    <img src="download (1).png" alt="Main visual" />
+  </div>
+
+  <!-- Right Text + Logos Section -->
+  <div class="details-section">
+    <div class="text-box">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dicta tempore minus?</p>
+      <h4>Lorem, ipsum.</h4>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+
+    <div class="logo-gallery">
+      <div><img src="images (2).jpeg" alt="Logo 1"></div>
+      <div><img src="images (3).jpeg" alt="Logo 2"></div>
+      <div><img src="images (4).jpeg" alt="Logo 3"></div>
+      <div><img src="images (5).jpeg" alt="Logo 4"></div>
+      <div><img src="images (6).jpeg" alt="Logo 5"></div>
+      <div><img src="images (7).jpeg" alt="Logo 6"></div>
+    </div>
+  </div>
+</div>
+<div class="text-container">
+  <h3>Lorem ipsum dolor sit amet.</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ex nesciunt mollitia sed facilis sunt.</p>
+</div>
+<div class="image-row">
+  <div class="image-card">
+    <img src="1.jpg" alt="Image 1">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo corrupti hic corporis?</p>
+  </div>
+  <div class="image-card">
+    <img src="2.jpg" alt="Image 2">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum ipsum tempora possimus.</p>
+  </div>
+  <div class="image-card">
+    <img src="3.jpg" alt="Image 3">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dicta pariatur doloremque.</p>
+  </div>
+</div>
+
+
+</body>
+</html>
